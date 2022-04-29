@@ -42,10 +42,10 @@
 </template>
 
 <script setup>
-// IMPORTS
+//IMPORTS=============================================IMPORTS//
 import { ref } from "vue";
 
-// MOBILE NAV
+//MOBILE_NAV==========================================MOBILE_NAV//
 const showMobileNav = ref(false);
 </script>
 
