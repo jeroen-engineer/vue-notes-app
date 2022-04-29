@@ -18,13 +18,27 @@
         </tr>
       </tbody>
     </table>
+    <input
+      v-model="loveVue"
+      v-autofocus
+      class="input"
+      type="text"
+      placeholder="Do you like Vue?"
+    />
   </div>
 </template>
 
 <script setup>
 //IMPORTS==============================IMPORTS//
+import { ref } from "vue";
 import { useStoreNotes } from "@/stores/storeNotes";
+import { vAutofocus } from "@/directives/vAutofocus";
+import { useWatchCharacters } from "@/use/useWatchCharacters";
 
 //STORE==============================STORE//
 const storeNotes = useStoreNotes();
+
+//LOVE_VUE=======================================LOVE_VUE//
+const loveVue = ref("");
+useWatchCharacters(loveVue, 20);
 </script>

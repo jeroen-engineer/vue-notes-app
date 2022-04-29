@@ -9,6 +9,8 @@
           class="textarea"
           :placeholder="placeholder"
           ref="textareaRef"
+          maxlength="100"
+          v-autofocus
         />
       </div>
     </div>
@@ -24,6 +26,7 @@
 <script setup>
 //IMPORTS==================================================IMPORTS//
 import { ref } from "vue";
+import { vAutofocus } from "@/directives/vAutofocus";
 
 //PROPS=====================================================PROPS//
 const props = defineProps({
@@ -43,10 +46,11 @@ const props = defineProps({
     type: String,
   },
 });
-//EMITS=================================================+====EMITS//
+
+//EMITS======================================================EMITS//
 const emit = defineEmits(["update:modelValue"]);
 
-//FOCUS_TEXTAREA========================================FOCUS_TEXTAREA//
+//FOCUS_TEXTAREA======================================FOCUS_TEXTAREA//
 const textareaRef = ref(null);
 const focusTextarea = () => {
   textareaRef.value.focus();
